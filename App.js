@@ -2,6 +2,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
+//
+import store from 'app/store';
 
 //
 import AuthScreen from 'app/screens/AuthScreen';
@@ -37,7 +40,9 @@ class App extends React.Component {
 
     //
     return (
-      <MainNavigator />
+      <Provider store={store}>
+        <MainNavigator />
+      </Provider>
     );
 
   }
