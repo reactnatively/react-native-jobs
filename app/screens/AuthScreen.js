@@ -1,9 +1,14 @@
 //
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-
+import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from 'app/actions';
 //
 class AuthScreen extends Component {
+
+  componentDidMount() {
+    this.props.facebookLogin();
+  }
 
   //
   render() {
@@ -24,4 +29,4 @@ class AuthScreen extends Component {
 
 }
 
-export default AuthScreen;
+export default connect(null, actions)(AuthScreen);
